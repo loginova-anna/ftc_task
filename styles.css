@@ -1,0 +1,118 @@
+body, html{
+	width: 100%;
+	color: #2E282A;
+	position: relative;
+	font-family: Helvetica, Arial, sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+h1, h2, h3, p, button, input,ul{
+	margin:10px;
+	margin-left: 5%;
+}
+.table_v1{
+	width: 90%;
+	margin: auto;
+	max-width: 1600px;
+	min-width: 600px;
+	display: block;
+	border: 1px solid #17BEBB;
+	padding: 0px; 
+	overflow: auto;
+}
+
+.cell{
+	height: 100px;
+	border: 1px solid #17BEBB;
+	background-color: #2E282A;
+	padding: 10px;
+	color: #EAEAEA;
+}
+.table_v1 > .cell{
+	float: left;
+	width: 25%;	
+	font-size: 0.9em;
+	transition: background-color 0.3s linear 0s;
+	-webkit-transition: background-color 0.3s linear 0s;
+	-moz-transition: background-color 0.3s linear 0s;
+	-o-transition: background-color 0.3s linear 0s;
+}
+.table_v1 > .cell:hover{
+	background-color: #CD5334;
+}
+
+.table_v2{
+	display: table;
+	width: 90%;
+	margin: auto;
+	max-width: 1600px;
+	min-width: 600px;
+	border: 1px solid #17BEBB;
+}
+
+.row{
+	display: table-row;
+}
+
+.row:nth-child(1) > .cell{
+	font-size: 1.2em;
+}
+
+.row:nth-child(1) > .cell:hover{
+	background-color: #CD5334;
+	color: #2E282A;
+}
+.row > .cell{
+	display: table-cell;
+	vertical-align: middle;
+  	text-align: center;
+}
+
+.row > .cell:hover{
+	color: #17BEBB;
+	font-size: 1.2em;
+}
+.rounded{
+	width: 50%;
+	height: 100px;
+	border-radius:10px;
+	margin: auto;
+	background: #368ddc; 
+    background: -webkit-linear-gradient(#368ddc, #1b69af); 
+    background: -o-linear-gradient(#368ddc, #1b69af); 
+    background: -moz-linear-gradient(#368ddc, #1b69af); 
+    background: linear-gradient(#368ddc, #1b69af); 
+    margin-bottom: 20px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 2s ease 0s;
+	-webkit-transition: opacity 2s ease 0s;
+	-moz-transition: opacity 2s ease 0s;
+	-o-transition: opacity 2s ease 0s;
+}
+.rounded:hover{
+	opacity: 0;
+}
+.but{
+	background-color: #2E282A;
+	color: #17BEBB;
+	border: 0px;
+	border-radius: 5px;
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+.but:hover{
+	width: auto;
+	cursor: pointer;
+} 
+.but:hover:after {
+   content: 'К началу страницы';
+   color: #EAEAEA;
+} 
+.but:hover i{
+	display: none;
+}

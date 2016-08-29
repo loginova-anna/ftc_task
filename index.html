@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FTC task solution by Loginova Anna</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+	<h1>HTML, CSS</h1>
+	<h2>Table variant 1</h1>
+	<div class="table_v1">
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+		<div class="cell">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam molestiae neque quaera</div>
+	</div>
+	<h2>Table variant 2</h2>
+	<div id="indices" class="table_v2">
+		<div class="row">
+			<div class="cell">1.1</div>
+			<div class="cell">1.2</div>
+			<div class="cell">1.3</div>
+			<div class="cell">1.4</div>
+		</div>
+		<div class="row">
+			<div class="cell">2.1</div>
+			<div class="cell">2.2</div>
+			<div class="cell">2.3</div>
+			<div class="cell">2.4</div>
+		</div>
+		<div class="row">
+			<div class="cell">3.1</div>
+			<div class="cell">3.2</div>
+			<div class="cell">3.3</div>
+			<div class="cell">3.4</div>
+		</div>
+		<div class="row">
+			<div class="cell">4.1</div>
+			<div class="cell">4.2</div>
+			<div class="cell">4.3</div>
+			<div class="cell">4.4</div>
+		</div>
+	</div>
+
+	<h2>Block with rounded borders</h2>
+	<div class="rounded"></div>
+
+	<button class="but"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
+	<h1>Javascript</h1>
+	<h2>Задание №1</h2>
+	<p>Реализовано в таблицах выше, результат выполнения в консоли.</p>
+	<h2>Задание №2</h2>
+	<h3>Способы создания объектов:</h3>
+	<ul>
+		<li>Литеральная нотация:
+			<p>var myKatya = {
+				<br>&nbsp; name: "Katyusha"; 
+				<br>&nbsp; sayBoo: function(){alert("Booo")};
+				<br>};</p>
+			<p>myObject.hair = "red";</p>
+		</li>
+		<li>Функция-конструктор:
+			<p>var Katya = function(newName){
+				<br> &nbsp; this.name = newName;
+				<br> &nbsp; this.sayBoo = function(){
+				<br> &nbsp; &nbsp; alert(newName + "says Boo!");
+				<br> &nbsp; };
+				<br> }
+			</p>
+			<p>// Создаем объект:</p>
+			<p>var myKatya = new Katya("Katyusha");</p>
+		</li>
+	</ul>
+	<h3>Наследование</h3>
+	<p>В JavaScript наследование реализуется при помощи цепи прототипов. У каждого обекта myObject есть прототип myObject.prototype и при попытке обратиться к свойству(или методу), например, myObject.prop, оно сначале ищется в самом myObject, а если его там нет, то в myObject.prototype. Если его и там нет, то вверх по цепочке прототипов.</p>
+	<p>Рассмотрим наследование на примере такого кода:
+		<br>function Child() {}
+		<br>Child.prototype.sayBoo = function() {
+		<br> &nbsp; alert('Boo!');
+		<br>};
+
+		<br>function Girl() {};
+
+		<br>Girl.prototype = new Child();
+
+		<br>Girl.prototype.scream = function() {
+		<br>&nbsp; alert('Ouch!');
+		<br>};
+
+		<br>var myKatya = new Girl();
+
+		<br>myKatya.sayBoo(); // выведет «Boo!»
+		<br>myKatya.scream(); // выведет «Ouch!»
+	</p>
+	<p> Прототип конструктора Girl - объект, созданный с помощью конструктора Child. Прототип конструктора Child содержит метод sayBoo(). Когда мы обращаемся к методу sayBoo() объекта myKatya:
+	<br>Интерпретатор ищет метод sayBoo() в самом объекте myKatya. Этого метода в объекте не существует;
+	<br>Тогда он ищет метод sayBoo() в прототипе конструктора Girl, которым является объект, созданный с помощью конструктора Child. Здесь метода также нет;
+	<br>Интерпретатор ищет метод sayBoo() в прототипе конструктора Child, где его и находит.</p>
+	<h3>Private, public, protected.</h3>
+	<p>В JavaScript приватными являются все свойства, которые доступны только из внутренних методов объекта. Private-свойства объявляются через var.</p>
+	<p>Пример:
+		<br>function eatingGirl(name, manyApples) { 
+		    <br>// Объявляется private переменная, доступна только из внутренних методов объекта.
+		    <br>var apples = manyApples;		 
+		    <br>// Объявляется public переменная.
+		    <br>this.stomachSize = 0;		
+		    <br>// Объявляется protected переменная. В Javascript нет protected свойств, поэтому их просто помечают подчеркиванием в начале.
+		    <br>this._fraze = "Protected fraze";	 
+		    <br>// Открытый метод, использующий private переменную apples
+		    <br>this.eat = function(time) {
+		     <br>&nbsp;   this.stomachSize = this.stomachSize + time*apples;
+		    <br>}
+		<br>}
+	</p>
+	<h2>Задание №3</h2>
+	<p>Реализовано в функции getSubString в файле script.js. Результат выполнения в консоли после нажатия кнопки:</p>
+	<button id="btn">getSubString()</button>
+	<h2>Задание №4</h2>
+	<p>Я поняла это задание так: функция одиночная - в смысле одиночная именованная, иначе не представляется возможным использовать onchange; синхронизация односторонняя, то есть значение i1 не зависит от значения i2 и не изменяется, если изменить i2.value; i1 и i2 передаются в функцию извне (правда, тогда не совсем понятно, зачем наложено ограничение на использование id, т.к. они не нужны, мы уже получили необходимые объекты)</p>
+	<p>function f(i1, i2){
+		<br>&nbsp; i1.onchange = function(){
+		<br>&nbsp; &nbsp; i2.value = this.value;
+		<br>}		
+	</p>
+	<h1>SQL</h1>
+	<p>Допустим, таблица с названиями компаний называется Names, таблица с котировками - Rates.</p>
+	<p>
+		SELECT Names.Name, new.rate, new.maxtime
+		<br>FROM Names
+		<br>JOIN (SELECT Id_company, MAX(Time) as maxtime, rate 	
+		<br>&nbsp;FROM Rates GROUP BY Id_company) as new
+		<br>ON Names.Id = new.Id_company;
+	</p>
+	<h1>Сервер на node.js.</h1>
+	<p>Реализация сервера в папке server</p>
+	<p>К сожалению, не удалось сделать так, чтобы счетчик обнулялся при покидании страницы, несмотря на то, что использованы cookies, которые по умолчанию должны сбрасываться, если не выставлена expire. Попытка почистить куки вручную также не увенчалась успехом.</p>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

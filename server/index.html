@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body onunload = "clearCookies()">
+  <input id="msg" type="text"/>
+  <button onclick="sendInput()" id="button">Send</button>
+  <p id="answer"></p>
+
+  <script>
+    function sendInput() {
+      var msg = document.getElementById("msg").value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'check'+msg, true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+        if (xhr.status != 200) {
+          alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+          return;
+        }
+        document.getElementById("answer").innerHTML = xhr.responseText;
+      }
+      xhr.send(null);
+
+    };
+
+    function delCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+    };
+
+    function clearCookies(){
+      delCookie("count");
+    };
+
+  </script>
+
+</body>
+
+</html>
